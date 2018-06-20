@@ -507,8 +507,8 @@ export function getBlockMarkup(
   customEntityTransform: Function,
 ): string {
   const blockHtml = [];
-  if (block.data && block.data.type === 'IMAGE'){
-    blockHtml.push('<img src="' + block.data.src + '" alt="' + block.data.alt + '" style="float:' + (entity.data.alignment || 'none') + ';height: ' + block.data.height + ';width: ' + block.data.width + '"/>');
+  if (block.data && block.data.type === 'image') {
+    blockHtml.push('<img src="' + block.data.src + '" alt="' + block.data.alt + '" style="float:' + (block.data.alignment || 'none') + ';height: ' + block.data.height + ';width: ' + block.data.width + '"/>');
   } else if (isAtomicEntityBlock(block)) {
     blockHtml.push(getEntityMarkup(
       entityMap,
