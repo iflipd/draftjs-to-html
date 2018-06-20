@@ -507,7 +507,9 @@ export function getBlockMarkup(
   customEntityTransform: Function,
 ): string {
   const blockHtml = [];
-  if (isAtomicEntityBlock(block)) {
+  if (block.data && block.data.type === 'IMAGE'){
+    blockHtml.push('<img src="' + block.data.src + '" alt="' + block.data.alt + '" style="float:' + (entity.data.alignment || 'none') + ';height: ' + block.data.height + ';width: ' + block.data.width + '"/>');
+  } else if (isAtomicEntityBlock(block)) {
     blockHtml.push(getEntityMarkup(
       entityMap,
       block.entityRanges[0].key,
