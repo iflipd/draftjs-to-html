@@ -504,10 +504,9 @@ function getBlockInnerMarkup(block, entityMap, hashtagConfig, customEntityTransf
 */
 function getBlockMarkup(block, entityMap, hashtagConfig, directional, customEntityTransform) {
   var blockHtml = [];
-	debugger
 	console.log(block.data.type)
 	if (block.data && block.data.type === 'img') {
-		let width = 200
+		let width = 'auto'
 		if (block.data.display === 'small') {
 			width = 200
 		} else if (block.data.display === 'medium') {
