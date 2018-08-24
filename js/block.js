@@ -506,13 +506,13 @@ function getBlockMarkup(block, entityMap, hashtagConfig, directional, customEnti
   var blockHtml = [];
 	console.log(block.data.type)
 	if (block.data && block.data.type === 'img') {
-		let width = 'auto'
+		let width = 'auto';
 		if (block.data.display === 'small') {
-			width = 200
+			width = '200px';
 		} else if (block.data.display === 'medium') {
-			width = 300
+			width = '300px';
 		} else if (block.data.display === 'large') {
-			width = 600
+			width = '600px';
 		}
 		let alignment
 		if (block.data.alignment === 'left') {
@@ -523,7 +523,7 @@ function getBlockMarkup(block, entityMap, hashtagConfig, directional, customEnti
 			alignment = 'center';
 		}
 		blockHtml.push('<div style="display:flex;justify-content:center;flex-direction:column;width: 100%;height: auto;align-items:'+alignment+';">')
-		blockHtml.push('<img src="' + block.data.src + '" alt="' + block.data.caption + '" style="height: auto;width: ' + width + 'px;"/>');
+		blockHtml.push('<img src="' + block.data.src + '" alt="' + block.data.caption + '" style="height: auto;width: ' + width + ';"/>');
 		if (block.data.caption) {
 			blockHtml.push('<div style="width:640px;font-size:1em;text-align:left;">'+block.data.caption+'</div>')
 		}
